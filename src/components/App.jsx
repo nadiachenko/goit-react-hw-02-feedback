@@ -21,7 +21,6 @@ export class App extends Component {
     });
   }
 
-  options = ["good", "neutral", "bad"]
 
   countTotalFeedback = () => {
     const { bad, good, neutral } = this.state
@@ -39,8 +38,8 @@ export class App extends Component {
     return (
       <>
         <Section>
-          <FeedbackOptions options={this.options} onLeaveFeedback={this.onLeaveFeedback} />
-          {(bad || good || neutral) ?
+          <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.onLeaveFeedback} />
+          {this.countTotalFeedback() ?
             <Statistics
               good={good}
               neutral={neutral}

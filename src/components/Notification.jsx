@@ -2,6 +2,6 @@
 import React from 'react';
 
 
-export const Notification = () => {
-    return (<div> <p>There is no feedback</p></div>)
+export const Notification = ({message}) => {
+    return (<div> <p>{message}</p></div>)
 }
